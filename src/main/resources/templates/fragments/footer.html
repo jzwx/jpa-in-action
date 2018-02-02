@@ -3,11 +3,13 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
-    <title>Thymeleaf in action</title>
+    <title>Bootstrap in action</title>
 </head>
 <body>
-<div th:fragment="footer">
-    <a href="https://github.com/jzwx">Welcome to jzwx!</a>
-</div>
+<footer class="blog-footer" data-th-fragment="footer">
+    <p>@ 2017 <a href="https://github.com/jzwx">jzwx.com</a>!</p>
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</footer>
 </body>
 </html>

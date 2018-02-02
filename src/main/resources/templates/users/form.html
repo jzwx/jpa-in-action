@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <meta charset="UTF-8">
-    <title>Thymeleaf in action</title></head>
+<head th:replace="~{fragments/header :: header}">
 <body>
-<div th:replace="~{fragments/header :: header}"></div>
+<div class="container blog-conten-container">
 <h3 th:text="${userModel.title}">jzwx</h3>
 <form action="/users" th:action="@{/users}" method="POST" th:object="${userModel.user}">
     <input type="hidden" name="id" th:value="*{id}"/> <!-- *{}thymeleaf模板中的选择表达式-->
     <br/>
     名称:<br/>
-    <input type="text" name="name" th:value="*{name}">
-    <br/>
+    <input type="text"  class="form-control" name="name" style="max-width: 15rem;" th:value="*{name}">
     邮箱:<br/>
-    <input type="text" name="email" th:value="*{email}"/>
-    <br/>
-    <input type="submit" value="提交">
+    <input type="text" class="form-control" name="email" style="max-width: 15rem;" th:value="*{email}"/>
+    <input type="submit" class="btn btn-primary" value="提交">
 </form>
+</div>
 <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 </html>
